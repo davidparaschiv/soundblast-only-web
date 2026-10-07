@@ -25,9 +25,12 @@ git -C "$REPO_ROOT" worktree add --detach "$TEMP_DIR" HEAD >/dev/null
 git -C "$TEMP_DIR" switch --orphan "$TEMP_BRANCH" >/dev/null
 git -C "$TEMP_DIR" rm -rf . >/dev/null 2>&1 || true
 
-cp -R "$SCRIPT_DIR"/. "$TEMP_DIR"/
-rm -f "$TEMP_DIR/deploy.sh"
-rm -f "$TEMP_DIR"/downloads/*.dmg
+rsync -a \
+  --exclude='.git/' \
+  --exclude='deploy.sh' \
+  --exclude='*.dmg' \
+  --exclude='.DS_Store' \
+  "$SCRIPT_DIR/" "$TEMP_DIR/"
 touch "$TEMP_DIR/.nojekyll"
 
 git -C "$TEMP_DIR" add --all
