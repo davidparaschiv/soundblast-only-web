@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Soundblast DJ — a focused desktop DJ app for live mixing, AI-assisted sampling, effects, and MIDI control." />
+    <meta name="theme-color" content="#070809" />
+    <title>Soundblast DJ</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+    <link rel="apple-touch-icon" href="assets/soundblast-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="#top" aria-label="Soundblast DJ home">
+        <img src="assets/soundblast-icon.png" alt="" />
+        <span>Soundblast <b>DJ</b></span>
+      </a>
+      <a class="header-download" href="#download">Download</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="video-launch">
+            <button class="video-button" id="open-video" type="button" aria-haspopup="dialog" aria-controls="video-dialog">
+              <span aria-hidden="true">▶</span>
+              View Video
+            </button>
+          </div>
+          <p class="kicker"><span></span> Desktop DJ software</p>
+          <h1>Mix music.<br /><em>Stay in flow.</em></h1>
+          <p class="lead">Two decks, AI-assisted samples, live effects, and MIDI control in one focused workspace.</p>
+          <a class="button" href="#download">Download Soundblast DJ <span>↓</span></a>
+          <p class="platforms">macOS 14+ · Apple Silicon</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Animated dual waveform visualization">
+          <div id="phaser-stage"></div>
+          <div class="deck-label deck-one"><b>1</b><span>DECK 1<small>READY</small></span></div>
+          <div class="deck-label deck-two"><b>2</b><span>DECK 2<small>READY</small></span></div>
+        </div>
+      </section>
+
+      <section class="description reveal" aria-labelledby="description-title">
+        <p class="section-label">Soundblast DJ</p>
+        <div>
+          <h2 id="description-title">Everything you need to perform. Nothing you don't.</h2>
+          <p>
+            Soundblast DJ keeps your music local and your controls close. Load two tracks,
+            shape the mix, generate playable samples, add live effects, and control the app
+            from your keyboard or MIDI hardware.
+          </p>
+        </div>
+      </section>
+
+      <section class="features" aria-labelledby="features-title">
+        <p class="section-label">Features</p>
+        <h2 id="features-title" class="sr-only">Soundblast DJ features</h2>
+        <div class="feature-grid">
+          <article class="reveal">
+            <span class="number">01</span>
+            <div class="feature-icon waveform-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <h3>Two-deck mixing</h3>
+            <p>Play two local tracks with waveforms, EQ, tempo, volume, and a smooth crossfader.</p>
+          </article>
+          <article class="reveal">
+            <span class="number">02</span>
+            <div class="feature-icon pads-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <h3>AI samples</h3>
+            <p>Separate vocals and instruments, then turn the track into immediately playable beat pads.</p>
+          </article>
+          <article class="reveal">
+            <span class="number">03</span>
+            <div class="feature-icon fx-icon" aria-hidden="true">FX</div>
+            <h3>Loops &amp; effects</h3>
+            <p>Record performance loops and trigger live effects without leaving the main deck.</p>
+          </article>
+          <article class="reveal">
+            <span class="number">04</span>
+            <div class="feature-icon midi-icon" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3>MIDI control</h3>
+            <p>Learn hardware controls once and keep your custom mappings for future sessions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="download" id="download" aria-labelledby="download-title">
+        <p class="section-label">Download</p>
+        <h2 id="download-title">Download for Mac.</h2>
+        <p class="download-note">Free download. No account required.</p>
+
+        <div class="download-list">
+          <a href="https://github.com/davidparaschiv/soundblast-only-web/releases/latest/download/SoundBlast.dmg">
+            <svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 12.8c0-2.7 2.2-4 2.3-4.1-1.3-1.9-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.2 1-.9 0-2.2-1-3.7-1-1.9 0-3.7 1.1-4.7 2.8-2 3.5-.5 8.7 1.4 11.5 1 1.4 2.1 2.9 3.6 2.8 1.4-.1 2-1 3.7-1s2.2 1 3.7 1c1.5 0 2.5-1.4 3.5-2.8 1.1-1.6 1.5-3.2 1.6-3.3-.1 0-3.2-1.2-3.2-4.8ZM13.9 4.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.6 1.8-.8.9-1.4 2.3-1.2 3.6 1.4.1 2.8-.7 3.6-1.6Z" /></svg>
+            <span><strong>Soundblast DJ for Mac</strong><small>macOS 14+ · Apple Silicon</small></span>
+            <b class="arrow">↓</b>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
+      <div class="video-shell">
+        <h2 class="sr-only" id="video-title">Soundblast DJ video</h2>
+        <button class="video-close" id="close-video" type="button" aria-label="Close video">×</button>
+        <video id="soundblast-video" controls playsinline preload="metadata">
+          <source src="assets/SoundBLAST-TikTok-13s.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </dialog>
+
+    <footer>
+      <a class="logo" href="#top"><img src="assets/soundblast-icon.png" alt="" /><span>Soundblast <b>DJ</b></span></a>
+      <p>© <span id="year"></span> Soundblast DJ</p>
+    </footer>
+  </body>
+</html>
