@@ -20,14 +20,6 @@ if [[ -n "$(git -C "$REPO_ROOT" status --porcelain --untracked-files=no)" ]]; th
   exit 1
 fi
 
-for file in \
-  "downloads/Soundblast-DJ-macOS-Apple-Silicon.dmg"; do
-  if [[ ! -f "$SCRIPT_DIR/$file" ]]; then
-    echo "Deployment stopped: missing web-app/$file"
-    exit 1
-  fi
-done
-
 echo "Creating temporary deployment branch: $TEMP_BRANCH"
 git -C "$REPO_ROOT" worktree add --detach "$TEMP_DIR" HEAD >/dev/null
 git -C "$TEMP_DIR" switch --orphan "$TEMP_BRANCH" >/dev/null
@@ -35,6 +27,7 @@ git -C "$TEMP_DIR" rm -rf . >/dev/null 2>&1 || true
 
 cp -R "$SCRIPT_DIR"/. "$TEMP_DIR"/
 rm -f "$TEMP_DIR/deploy.sh"
+rm -f "$TEMP_DIR"/downloads/*.dmg
 touch "$TEMP_DIR/.nojekyll"
 
 git -C "$TEMP_DIR" add --all

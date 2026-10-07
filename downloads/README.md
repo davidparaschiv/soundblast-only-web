@@ -1,7 +1,7 @@
 # Release downloads
 
-Add the Apple Silicon installer to this folder before deployment:
+The Apple Silicon installer is hosted in GitHub Releases, not committed to the Pages branch:
 
-- `Soundblast-DJ-macOS-Apple-Silicon.dmg`
+- `SoundBlast.dmg`
 
-The website links directly to this file, and `deploy.sh` verifies that it exists before publishing.
+The website links to the latest release asset with this filename.
