@@ -1,6 +1,31 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+const videoDialog = document.querySelector('#video-dialog');
+const video = document.querySelector('#soundblast-video');
+const openVideo = document.querySelector('#open-video');
+const closeVideo = document.querySelector('#close-video');
+
+function closeVideoDialog() {
+  video.pause();
+  videoDialog.close();
+}
+
+openVideo.addEventListener('click', () => {
+  videoDialog.showModal();
+  document.body.classList.add('video-open');
+  video.play().catch(() => {});
+});
+
+closeVideo.addEventListener('click', closeVideoDialog);
+videoDialog.addEventListener('click', (event) => {
+  if (event.target === videoDialog) closeVideoDialog();
+});
+videoDialog.addEventListener('close', () => {
+  video.pause();
+  document.body.classList.remove('video-open');
+});
+
 function drawFallback(container) {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');

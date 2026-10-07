@@ -24,6 +24,12 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
+          <div class="video-launch">
+            <button class="video-button" id="open-video" type="button" aria-haspopup="dialog" aria-controls="video-dialog">
+              <span aria-hidden="true">▶</span>
+              View Video
+            </button>
+          </div>
           <p class="kicker"><span></span> Desktop DJ software</p>
           <h1>Mix music.<br /><em>Stay in flow.</em></h1>
           <p class="lead">Two decks, AI-assisted samples, live effects, and MIDI control in one focused workspace.</p>
@@ -95,6 +101,17 @@
         </div>
       </section>
     </main>
+
+    <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
+      <div class="video-shell">
+        <h2 class="sr-only" id="video-title">Soundblast DJ video</h2>
+        <button class="video-close" id="close-video" type="button" aria-label="Close video">×</button>
+        <video id="soundblast-video" controls playsinline preload="metadata">
+          <source src="assets/SoundBLAST-TikTok-13s.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </dialog>
 
     <footer>
       <a class="logo" href="#top"><img src="assets/soundblast-icon.png" alt="" /><span>Soundblast <b>DJ</b></span></a>
