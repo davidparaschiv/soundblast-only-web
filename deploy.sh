@@ -28,6 +28,7 @@ git -C "$TEMP_DIR" rm -rf . >/dev/null 2>&1 || true
 rsync -a \
   --exclude='.git/' \
   --exclude='deploy.sh' \
+  --exclude='soundblast-backend/' \
   --exclude='*.dmg' \
   --exclude='.DS_Store' \
   "$SCRIPT_DIR/" "$TEMP_DIR/"

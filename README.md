@@ -2,6 +2,8 @@
 
 Static, single-page product website for GitHub Pages. The animated hero uses Phaser 3.90.0 with a Canvas fallback.
 
+The private backend is currently stored in the ignored `soundblast-backend/` folder. That folder is self-contained and ready to become a separate private Git repository.
+
 ## Download file
 
 Upload the Apple Silicon release to GitHub Releases using this exact name:
@@ -10,7 +12,7 @@ Upload the Apple Silicon release to GitHub Releases using this exact name:
 
 ## Preview locally
 
-From `web-app`, start any static file server. For example:
+From the repository root, start any static file server:
 
 ```sh
 python3 -m http.server 8080
@@ -23,9 +25,7 @@ Then open `http://localhost:8080`.
 Commit the website, publish the GitHub Release, then run:
 
 ```sh
-./web-app/deploy.sh
+./deploy.sh
 ```
 
-The script creates an isolated temporary branch in a temporary worktree, excludes local DMG files, publishes the website to the remote `gh-pages` branch, and removes the local temporary branch and worktree. Existing working files are never replaced.
-
-In the GitHub repository settings, configure Pages to deploy from the `gh-pages` branch at `/ (root)`.
+The deployment excludes `soundblast-backend/`, local DMG files, and other local-only files. In GitHub repository settings, configure Pages to deploy from the `gh-pages` branch at `/ (root)`.
