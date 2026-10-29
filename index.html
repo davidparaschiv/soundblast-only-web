@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Soundblast DJ for the DJCONTROL INPULSE 200MK3." />
+    <meta name="theme-color" content="#070809" />
+    <title>Soundblast DJ</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+    <link rel="apple-touch-icon" href="assets/soundblast-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <aside class="partner-bar" aria-label="Required DJ controller">
+      <div class="partner-bar-inner">
+        <span class="partner-bar-mark" aria-hidden="true"></span>
+        <p>
+          <span>Built exclusively for</span>
+          <strong>DJCONTROL INPULSE 200MK3</strong>
+        </p>
+      </div>
+    </aside>
+
+    <header>
+      <a class="logo" href="#top" aria-label="Soundblast DJ home">
+        <img src="assets/soundblast-icon.png" alt="" />
+        <span>Soundblast <b>DJ</b></span>
+      </a>
+      <nav class="header-actions" aria-label="Primary navigation">
+        <a class="header-download" href="terms.html">Terms</a>
+        <a class="header-download" href="#download">Download</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker"><span></span> Controller-exclusive DJ software</p>
+          <h1>One controller.<br /><em>Powerful transitions.</em></h1>
+          <p class="lead">Soundblast DJ works only with the DJCONTROL INPULSE 200MK3.</p>
+          <a class="button" href="#download">Download Soundblast DJ <span>↓</span></a>
+          <p class="platforms">macOS 14+ · Apple Silicon</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Animated dual waveform visualization">
+          <div id="phaser-stage"></div>
+          <div class="deck-label deck-one"><b>1</b><span>DECK 1<small>READY</small></span></div>
+          <div class="deck-label deck-two"><b>2</b><span>DECK 2<small>READY</small></span></div>
+        </div>
+      </section>
+
+      <section class="key-points reveal" aria-labelledby="key-points-title">
+        <div class="key-points-heading">
+          <p class="section-label">Key Features</p>
+          <h2 id="key-points-title">Simple tools.<br />Ready to play.</h2>
+        </div>
+        <ul class="key-points-list">
+          <li>Automatic slice analysis</li>
+          <li>Automatic generation of stem beats and instruments, ready to play and keyed to scale</li>
+          <li>Automatic loop detection and faster playback via jogwheel up to 4×</li>
+          <li>Automatic transition mode: play powerful transitions with no skill</li>
+          <li>Learning mode allows you to learn to play powerful DJ transitions</li>
+        </ul>
+      </section>
+
+      <section class="download" id="download" aria-labelledby="download-title">
+        <p class="section-label">Download</p>
+        <h2 id="download-title">Get Soundblast DJ.</h2>
+        <p class="download-note">Free download · DJCONTROL INPULSE 200MK3 required.</p>
+
+        <div class="download-list">
+          <a href="https://github.com/davidparaschiv/soundblast-only-web/releases/latest/download/SoundBlast.dmg">
+            <svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 12.8c0-2.7 2.2-4 2.3-4.1-1.3-1.9-3.3-2.1-4-2.1-1.7-.2-3.3 1-4.2 1-.9 0-2.2-1-3.7-1-1.9 0-3.7 1.1-4.7 2.8-2 3.5-.5 8.7 1.4 11.5 1 1.4 2.1 2.9 3.6 2.8 1.4-.1 2-1 3.7-1s2.2 1 3.7 1c1.5 0 2.5-1.4 3.5-2.8 1.1-1.6 1.5-3.2 1.6-3.3-.1 0-3.2-1.2-3.2-4.8ZM13.9 4.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.6 1.8-.8.9-1.4 2.3-1.2 3.6 1.4.1 2.8-.7 3.6-1.6Z" /></svg>
+            <span><strong>Download Soundblast DJ</strong><small>macOS 14+ · Apple Silicon · DJCONTROL INPULSE 200MK3</small></span>
+            <b class="arrow">↓</b>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" href="#top"><img src="assets/soundblast-icon.png" alt="" /><span>Soundblast <b>DJ</b></span></a>
+      <p>© <span id="year"></span> Soundblast DJ</p>
+    </footer>
+  </body>
+</html>
